@@ -1,0 +1,40 @@
+Business Count = DISTINCTCOUNT(dim_business_data[business_id])
+
+Active User Count = DISTINCTCOUNT(fact_review[user_id])
+
+Engaged Users (High Ratings) = 
+CALCULATE(
+    DISTINCTCOUNT(dim_user[user_id]),
+    fact_review[stars] >= SELECTEDVALUE(ReviewStarThreshold[ReivewStar Value], 4)
+)
+
+
+High-Rated Business % = 
+DIVIDE(
+    CALCULATE(COUNT(fact_business_data[business_id]), fact_business_data[stars] >= 4),
+    COUNT(fact_business_data[business_id])
+)
+
+Regional Average Rating = 
+AVERAGE(fact_business_data[stars])
+
+Regional Review Volume = 
+SUM(fact_business_data[review_count])
+
+Review Count = COUNT(fact_review[review_id])
+
+Users Count (Reviewed) = 
+CALCULATE(
+    DISTINCTCOUNT(fact_review[user_id])
+)
+
+
+Weighted Score = 
+VAR HighRatedPercent = [High-Rated Business %]
+VAR TotalReviews = [Regional Review Volume]
+RETURN
+IF(TotalReviews >= 1000, HighRatedPercent, HighRatedPercent * (TotalReviews / 1000))
+
+
+ReviewStarThreshold = 
+DATATABLE("ReivewStar Value", INTEGER, { {1}, {2}, {3}, {4}, {5} })
