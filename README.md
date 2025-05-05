@@ -1,4 +1,4 @@
-#  Yelp Data Pipeline and BI Insights
+#  Yelp Insights at Scale: A Full-Stack Big Data Architecture on Google Cloud Platform
 
 This project leverages the Yelp Open Dataset to build an end-to-end data pipeline using Google Cloud Platform (GCP). We process raw JSON data with distributed tools and deliver business-ready insights via Power BI dashboards. The goal is to uncover regional patterns, user engagement trends, and category-level performance from millions of business reviews across the U.S.
 
