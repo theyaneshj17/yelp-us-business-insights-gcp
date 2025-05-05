@@ -38,12 +38,12 @@ The dataset used is from the [Yelp Open Dataset](https://business.yelp.com/data/
 ├── bronze/
 │   └── *.py              # Scripts to load GCS JSON → MongoDB
 ├── silver/
-│   ├── scripts/          # PySpark scripts to transform and clean MongoDB → BigQuery
+│   ├── *.py           # PySpark scripts to transform and clean MongoDB → BigQuery
 │   └── ...               # Intermediate GCS outputs
 ├── gold/
 │   └── gold_layer.sql    # SQL for dimension/fact tables and views in BigQuery
 ├── powerbi/
-│   ├── YelpDashboard.pbix
+│   ├── Reporting.pbix
 │   └── dax_measures.txt  # All DAX measures used in Power BI
 ├── assets/
 │   ├── FinalArchitecture.png
@@ -53,8 +53,8 @@ The dataset used is from the [Yelp Open Dataset](https://business.yelp.com/data/
 │   └── PowerBI_screenshot3.png
 │   └── PowerBI_screenshot4.png
 └── README.md            
-
-## 🚦 How to Run
+```
+## How to Run
 
 ### Step 1: Upload Raw Data
 
@@ -141,11 +141,11 @@ Run the full SQL script under gold/ to create structured dimension and fact tabl
 ####  View
 - `vw_business_performance_summary` – Unified view for dashboards and reporting
 
-## 📊 Power BI Dashboard
+##  Power BI Dashboard
 
 The Power BI report consumes the **Gold Layer** tables from BigQuery and provides interactive, visual analytics.
 
-### ✨ Features:
+###  Features:
 - **Slicer-based filtering** on year and star ratings
 - **Elite user impact analysis** on reviews and business popularity
 - **Regional distribution** of business counts and review patterns
@@ -153,7 +153,7 @@ The Power BI report consumes the **Gold Layer** tables from BigQuery and provide
 
 ---
 
-### 🧩 Data Modeling Screenshot:
+###  Data Modeling Screenshot:
 ![Data Model](assets/PowerBI_DataModelling.png)
 
 ---
@@ -171,7 +171,7 @@ The Power BI report consumes the **Gold Layer** tables from BigQuery and provide
 Once configured, click **Refresh** in Power BI to load the latest Gold Layer data from BigQuery into your visuals.
 
 
-### 📄 Sample Report Page:
+### Sample Report Page:
 ![Data Model](assets/PowerBI_screenshot1.png)
 
 ---
