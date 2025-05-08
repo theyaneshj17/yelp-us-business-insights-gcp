@@ -177,8 +177,10 @@ Once configured, click **Refresh** in Power BI to load the latest Gold Layer dat
 ---
 
 
-## 🏷 Credits
+## 🏷 Credits & References
 
 - **Dataset Source**: [Yelp Open Dataset](https://www.yelp.com/dataset)
-- **Project by**: *[theyaneshj17@gmail.com]*
+- **Architecture Inspiration**: [SQL Data Warehouse Project by Baraa](https://github.com/DataWithBaraa/sql-data-warehouse-project)
+- **Spark Tuning Reference**: [Apache Spark Performance Tuning Guide](https://spark.apache.org/docs/latest/tuning.html)
 
+- **Project by**: *theyaneshj17@gmail.com*
